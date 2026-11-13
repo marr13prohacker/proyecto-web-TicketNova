@@ -1,0 +1,1138 @@
+/* ======================================================================
+   TICKETNOVA - ESTILO "PÓSTER DE CONCIERTO": TINTA, CORAL Y ÁMBAR
+   ====================================================================== */
+:root {
+    --tinta: #15101c;        /* negro violáceo de fondo oscuro */
+    --tinta-2: #241a30;      /* panel oscuro secundario */
+    --coral: #ff4d5e;        /* color principal de botones */
+    --coral-oscuro: #e0283b;
+    --ambar: #ffb627;        /* acento dorado tipo boleto */
+    --crema: #fff7ea;        /* fondo claro cálido */
+    --papel: #ffffff;
+    --texto: #2a2231;
+    --suave: #6f647a;
+    --linea: #eadfce;
+    --radio: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--texto);
+    background-color: var(--crema);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Títulos tipo cartel */
+h1, h2, h3.form-card-title, .brand-logo-text, .hero-tag, .teachers-tag, .event-date {
+    font-family: 'Bebas Neue', 'Impact', 'Arial Narrow', sans-serif;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+}
+
+/* ======================================================================
+   BARRA SUPERIOR Y NAVEGACIÓN
+   ====================================================================== */
+.top-bar {
+    background: var(--coral);
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+.top-bar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.45rem 1.25rem;
+}
+
+.top-contacts {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.navbar {
+    background: var(--tinta);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 3px solid var(--ambar);
+    box-shadow: 0 6px 20px rgba(21, 16, 28, 0.35);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.7rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.brand-logo-text {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+}
+
+.brand-logo-text span {
+    color: var(--ambar);
+}
+
+.brand-logo-text .brand-ticket {
+    display: inline-block;
+    transform: rotate(-18deg);
+    margin-right: 4px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: #e9e2f2;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 182, 39, 0.15);
+    color: var(--ambar);
+}
+
+.nav-links .btn-nav-login {
+    background: var(--ambar);
+    color: var(--tinta);
+    font-weight: 700;
+}
+
+.nav-links .btn-nav-login:hover {
+    background: #ffc94d;
+    color: var(--tinta);
+}
+
+/* ======================================================================
+   SECCIÓN HERO (TEXTO + CARRUSEL / FORMULARIO)
+   ====================================================================== */
+.hero-section {
+    background:
+        radial-gradient(circle at 12% 15%, rgba(255, 77, 94, 0.32), transparent 40%),
+        radial-gradient(circle at 90% 85%, rgba(255, 182, 39, 0.2), transparent 40%),
+        var(--tinta);
+    color: #fff;
+    padding: 4rem 1.25rem;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: var(--ambar);
+    color: var(--tinta);
+    padding: 0.2rem 0.9rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    transform: rotate(-2deg);
+    margin-bottom: 1rem;
+}
+
+.hero-text-side h1 {
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.hero-text-side > p,
+.hero-desc-custom {
+    font-size: 1.1rem;
+    color: #d8cfe6;
+    margin-bottom: 1.8rem;
+    max-width: 520px;
+}
+
+.hero-title-custom {
+    color: var(--ambar);
+}
+
+.hero-subtitle-custom {
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: #fff;
+}
+
+.hero-cta-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    align-items: flex-start;
+}
+
+.btn-orange {
+    display: inline-block;
+    background: var(--coral);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.95rem 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(255, 77, 94, 0.45);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-orange:hover {
+    background: var(--coral-oscuro);
+    transform: translateY(-2px);
+}
+
+.hero-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    color: #e9e2f2;
+    font-size: 0.95rem;
+}
+
+.hero-benefits span::first-letter {
+    color: var(--ambar);
+}
+
+/* ======================================================================
+   CARRUSEL AUTOMÁTICO (idea del proyecto "incrustado")
+   ====================================================================== */
+.auto-carousel {
+    position: relative;
+    border-radius: var(--radio);
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+    background: var(--tinta-2);
+    border: 3px solid var(--ambar);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
+}
+
+.auto-carousel-track,
+.auto-slide {
+    position: absolute;
+    inset: 0;
+}
+
+.auto-slide {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.auto-slide.active {
+    opacity: 1;
+}
+
+.auto-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2.4rem 1.2rem 2.6rem;
+    background: linear-gradient(0deg, rgba(21, 16, 28, 0.92), transparent);
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-caption strong {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.9rem;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+}
+
+.slide-caption span {
+    color: var(--ambar);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.auto-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(21, 16, 28, 0.65);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    z-index: 2;
+}
+
+.auto-carousel-btn:hover {
+    background: var(--coral);
+}
+
+.auto-carousel-btn.prev { left: 12px; }
+.auto-carousel-btn.next { right: 12px; }
+
+.auto-carousel-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 2;
+}
+
+.auto-carousel-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.25s;
+}
+
+.auto-carousel-dots button.active {
+    width: 28px;
+    border-radius: 6px;
+    background: var(--ambar);
+}
+
+/* ======================================================================
+   SECCIONES GENERALES
+   ====================================================================== */
+.section-container,
+.teachers-container,
+.convenios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    color: var(--tinta);
+    text-transform: uppercase;
+    line-height: 1.05;
+}
+
+.section-header p {
+    color: var(--suave);
+}
+
+/* ======================================================================
+   CATEGORÍAS (tarjetas con imagen)
+   ====================================================================== */
+.careers-section {
+    padding: 4.5rem 1.25rem;
+    background: var(--crema);
+}
+
+.careers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.career-card {
+    background: var(--papel);
+    border-radius: var(--radio);
+    overflow: hidden;
+    border: 1px solid var(--linea);
+    box-shadow: 0 8px 24px rgba(42, 34, 49, 0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.career-card:hover {
+    transform: translateY(-6px) rotate(-0.6deg);
+    box-shadow: 0 16px 34px rgba(255, 77, 94, 0.22);
+}
+
+.career-img-container {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+}
+
+.career-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.career-card:hover .career-img-container img {
+    transform: scale(1.07);
+}
+
+.career-content {
+    padding: 1.1rem 1.2rem 1.4rem;
+    border-top: 3px solid var(--coral);
+}
+
+.career-content h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.3rem;
+    color: var(--tinta);
+}
+
+.career-content p {
+    font-size: 0.92rem;
+    color: var(--suave);
+}
+
+/* ======================================================================
+   PRÓXIMOS EVENTOS: BOLETOS EN CARRUSEL HORIZONTAL
+   ====================================================================== */
+.teachers-section {
+    background: var(--tinta-2);
+    color: #fff;
+    padding: 4.5rem 1.25rem;
+}
+
+.teachers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.teachers-header > div:first-child {
+    max-width: 640px;
+}
+
+.teachers-tag {
+    display: inline-block;
+    color: var(--ambar);
+    font-size: 1.15rem;
+    margin-bottom: 0.2rem;
+}
+
+.teachers-header h2 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    text-transform: uppercase;
+    line-height: 1.05;
+}
+
+.teachers-header p {
+    color: #cfc6de;
+}
+
+.teachers-nav-buttons {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--ambar);
+    background: transparent;
+    color: var(--ambar);
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: var(--ambar);
+    color: var(--tinta);
+}
+
+.teachers-grid {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 0.5rem 0.25rem 1.5rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    cursor: grab;
+    scrollbar-width: thin;
+    scrollbar-color: var(--coral) transparent;
+}
+
+.teachers-grid.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+    user-select: none;
+}
+
+/* Tarjeta con forma de boleto: muescas laterales y línea de corte punteada */
+.teacher-card {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    background: var(--papel);
+    color: var(--texto);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.teacher-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    pointer-events: none; /* evita arrastrar la imagen en lugar del carrusel */
+}
+
+.teacher-card::before,
+.teacher-card::after {
+    content: "";
+    position: absolute;
+    top: 170px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--tinta-2);
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.teacher-card::before { left: -13px; }
+.teacher-card::after { right: -13px; }
+
+.teacher-info {
+    padding: 1.1rem 1.2rem 1.2rem;
+    border-top: 2px dashed #d9cdbb;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.event-date {
+    color: var(--coral);
+    font-size: 1.15rem;
+}
+
+.teacher-info h3 {
+    font-size: 1.1rem;
+    color: var(--tinta);
+    margin: 0.1rem 0 0.35rem;
+    line-height: 1.25;
+}
+
+.teacher-info p {
+    font-size: 0.88rem;
+    color: var(--suave);
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.event-buy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.event-price {
+    font-weight: 700;
+    color: var(--tinta);
+}
+
+.btn-buy {
+    border: none;
+    background: var(--coral);
+    color: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-buy:hover {
+    background: var(--coral-oscuro);
+    transform: scale(1.05);
+}
+
+/* ======================================================================
+   FORMULARIO DE COMPRA (tarjeta flotante)
+   ====================================================================== */
+.hero-benefits-column {
+    gap: 0.5rem;
+}
+
+.cbtis-hero-form-card {
+    background: var(--papel);
+    color: var(--texto);
+    border-radius: var(--radio);
+    padding: 2rem 1.8rem 1.8rem;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+    border-top: 6px solid var(--coral);
+}
+
+.form-card-title {
+    font-size: 2rem;
+    color: var(--tinta);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 2px dashed #d9cdbb;
+}
+
+.form-group-margin {
+    margin-bottom: 0.8rem;
+}
+
+.form-control-input,
+.form-control-select,
+.form-control-date,
+.form-control-textarea {
+    width: 100%;
+    padding: 0.8rem 0.95rem;
+    border: 1.5px solid var(--linea);
+    border-radius: 10px;
+    background: #fffdf9;
+    font-family: inherit;
+    font-size: 0.96rem;
+    color: var(--texto);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control-textarea {
+    resize: vertical;
+}
+
+.form-control-input:focus,
+.form-control-select:focus,
+.form-control-date:focus,
+.form-control-textarea:focus {
+    outline: none;
+    border-color: var(--coral);
+    box-shadow: 0 0 0 3px rgba(255, 77, 94, 0.18);
+}
+
+.form-date-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--suave);
+    margin-bottom: 0.3rem;
+}
+
+.total-box {
+    background: var(--crema);
+    border: 1.5px dashed var(--ambar);
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    margin: 0.4rem 0 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.total-box strong {
+    font-size: 1.25rem;
+    color: var(--coral-oscuro);
+}
+
+.form-group-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 1.1rem;
+}
+
+.form-checkbox-input {
+    margin-top: 0.25rem;
+    accent-color: var(--coral);
+}
+
+.form-checkbox-label {
+    font-size: 0.85rem;
+    color: var(--suave);
+}
+
+.cbtis-btn-ingresar {
+    width: 100%;
+    background: linear-gradient(90deg, var(--coral), #ff7a4d);
+    color: #fff;
+    border: none;
+    padding: 0.95rem;
+    border-radius: 12px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(255, 77, 94, 0.4);
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.cbtis-btn-ingresar:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.07);
+}
+
+/* ======================================================================
+   MAPA INCRUSTADO
+   ====================================================================== */
+.map-section {
+    padding: 4.5rem 1.25rem;
+    background: var(--crema);
+}
+
+.map-container {
+    border-radius: var(--radio);
+    overflow: hidden;
+    border: 3px solid var(--tinta);
+    box-shadow: 10px 10px 0 var(--ambar);
+    background: #ddd;
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+/* ======================================================================
+   FORMAS DE PAGO Y RECINTOS (CARTELES QUE SE DESPLAZAN)
+   ====================================================================== */
+.convenios-section {
+    background: var(--tinta);
+    color: #fff;
+    padding: 4.5rem 0;
+    overflow: hidden;
+}
+
+.convenios-section .section-header {
+    padding: 0 1.25rem;
+}
+
+.convenios-section .section-header h2 {
+    color: #fff;
+}
+
+.convenios-section .section-header p {
+    color: #cfc6de;
+}
+
+.convenience-tag-custom {
+    margin-bottom: 0.4rem;
+}
+
+.marquee-wrapper {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.marquee-wrapper-spacing {
+    margin-top: 1.2rem;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    padding: 0.3rem 0;
+}
+
+.marquee-track-top { animation: marquee-izq 32s linear infinite; }
+.marquee-track-bottom { animation: marquee-der 32s linear infinite; }
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-izq {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 0.5rem)); }
+}
+
+@keyframes marquee-der {
+    from { transform: translateX(calc(-50% - 0.5rem)); }
+    to { transform: translateX(0); }
+}
+
+.convenio-card {
+    white-space: nowrap;
+    padding: 0.9rem 1.6rem;
+    border-radius: 12px;
+    background: var(--tinta-2);
+    border: 1.5px dashed rgba(255, 182, 39, 0.6);
+    font-weight: 700;
+    color: #fff;
+}
+
+/* ======================================================================
+   PIE DE PÁGINA
+   ====================================================================== */
+.footer {
+    background: #0d0912;
+    color: #b8aecb;
+    padding: 2rem 1.25rem;
+    border-top: 4px solid var(--coral);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-info p {
+    font-size: 0.9rem;
+}
+
+.footer-author,
+.footer-date {
+    font-size: 0.82rem !important;
+    opacity: 0.85;
+}
+
+.footer-date time {
+    color: var(--ambar);
+    text-transform: capitalize;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--tinta-2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.social-icon:hover {
+    background: var(--ambar);
+    color: var(--tinta);
+    transform: translateY(-3px);
+}
+
+/* ======================================================================
+   LOGIN (login.html)
+   ====================================================================== */
+.cbtis-login-body {
+    background: var(--crema);
+}
+
+.cbtis-login-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    min-height: 100vh;
+}
+
+.cbtis-left-panel {
+    background:
+        radial-gradient(circle at 20% 15%, rgba(255, 182, 39, 0.35), transparent 40%),
+        radial-gradient(circle at 85% 90%, rgba(255, 77, 94, 0.5), transparent 45%),
+        linear-gradient(160deg, var(--tinta), #3a1633);
+    color: #fff;
+    padding: 3rem 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Muescas decorativas tipo boleto en el borde derecho */
+.cbtis-left-panel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -12px;
+    bottom: 0;
+    width: 24px;
+    background: radial-gradient(circle at 50% 12px, var(--crema) 11px, transparent 12px) 0 0 / 24px 40px repeat-y;
+}
+
+.cbtis-left-content {
+    margin: auto 0;
+    max-width: 460px;
+}
+
+.cbtis-illustration-box {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cbtis-badge-icon {
+    font-size: 4rem;
+    margin-bottom: 0.4rem;
+}
+
+.cbtis-illustration-box h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 3.4rem;
+    letter-spacing: 0.06em;
+    color: var(--ambar);
+    line-height: 1;
+}
+
+.cbtis-notices-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: var(--radio);
+    padding: 1.4rem 1.5rem;
+    min-height: 150px;
+}
+
+.cbtis-notices-box h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: var(--ambar);
+    margin-bottom: 0.3rem;
+}
+
+.cbtis-notices-box p {
+    color: #eee8f8;
+}
+
+.cbtis-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1.2rem;
+}
+
+.cbtis-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.cbtis-dot.active {
+    width: 28px;
+    border-radius: 6px;
+    background: var(--ambar);
+}
+
+.cbtis-left-footer {
+    text-align: center;
+    font-size: 0.82rem;
+    color: #cfc6de;
+}
+
+.cbtis-left-footer span {
+    opacity: 0.8;
+}
+
+.cbtis-right-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+}
+
+.cbtis-login-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-back-container {
+    margin-bottom: 1.5rem;
+}
+
+.cbtis-back-link {
+    color: var(--suave);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cbtis-back-link:hover {
+    color: var(--coral-oscuro);
+}
+
+.cbtis-logo-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-logo-emoji {
+    font-size: 2.6rem;
+    transform: rotate(-18deg);
+}
+
+.cbtis-logo-header h1 {
+    font-size: 3rem;
+    color: var(--tinta);
+    line-height: 1;
+}
+
+.cbtis-logo-header h1 strong {
+    color: var(--coral);
+    font-weight: 400;
+}
+
+.cbtis-input-group {
+    margin-bottom: 1.1rem;
+}
+
+.cbtis-input-group label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--suave);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.35rem;
+}
+
+.cbtis-input-group input[type="text"],
+.cbtis-input-group input[type="password"] {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid var(--linea);
+    border-radius: 10px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cbtis-input-group input:focus {
+    outline: none;
+    border-color: var(--coral);
+    box-shadow: 0 0 0 3px rgba(255, 77, 94, 0.18);
+}
+
+.cbtis-login-help {
+    text-align: center;
+    margin-top: 1.4rem;
+    font-size: 0.88rem;
+    color: var(--suave);
+}
+
+.cbtis-login-help a {
+    color: var(--coral-oscuro);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.cbtis-login-help a:hover {
+    text-decoration: underline;
+}
+
+/* ======================================================================
+   RESPONSIVO
+   ====================================================================== */
+@media (max-width: 900px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-section {
+        padding: 3rem 1rem;
+    }
+
+    .top-contacts {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    .cbtis-login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cbtis-left-panel {
+        padding: 2.5rem 1.5rem 1.5rem;
+        min-height: 420px;
+    }
+
+    .cbtis-left-panel::after {
+        display: none;
+    }
+
+    .teachers-header {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 520px) {
+    .teacher-card {
+        flex-basis: 78vw;
+    }
+
+    .cbtis-hero-form-card {
+        padding: 1.5rem 1.1rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}

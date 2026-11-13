@@ -1,0 +1,470 @@
+<!--
+  ======================================================================
+  INSTITUCIÓN: CBTis 166 Pablo Torres Burgos
+  ----------------------------------------------------------------------
+  * Estudiante: Gaona Castro Eduardo Baltazar
+  * Grupo: 3B PRO VESP
+  * Actividad: Portal con barra superior, carrusel, formulario y contenido incrustado
+  * Tema de la página: Venta de boletos para eventos (TicketNova, proyecto escolar ficticio)
+  * Ideas tomadas del proyecto "incrustado": carrusel automático cada 4 s,
+    mapa incrustado con iframe y fecha dinámica con JavaScript.
+  ====================================================================== -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketNova - Venta de Boletos para Conciertos, Teatro y Deportes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <div class="top-bar" id="inicio">
+        <div class="top-bar-container">
+            <div class="top-contacts">
+                <span class="top-item">📞 734 000 0000</span>
+                <span class="top-item whatsapp">💬 Compra por <strong>WhatsApp</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA DE NAVEGACIÓN PRINCIPAL -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#inicio" class="brand-logo-text"><span class="brand-ticket">🎟</span> TICKET<span>NOVA</span></a>
+            </div>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#categorias">Categorías</a>
+                <a href="#eventos">Próximos Eventos</a>
+                <a href="#comprar">Comprar</a>
+                <a href="login.html" class="btn-nav-login">Mi cuenta</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL: TEXTO + CARRUSEL AUTOMÁTICO (idea del proyecto "incrustado") -->
+    <section class="hero-section">
+        <div class="hero-container">
+
+            <!-- Columna Izquierda: Textos, Botón y Beneficios -->
+            <div class="hero-text-side">
+                <span class="hero-tag">¡PREVENTA ABIERTA!</span>
+                <h1>Vive la música, el teatro y el deporte en primera fila</h1>
+                <p>Compra tus boletos en línea en minutos: elige tu evento, tu zona y recibe tu entrada digital con código QR directo a tu correo.</p>
+
+                <div class="hero-cta-box">
+                    <a href="#comprar" class="btn-orange">Comprar boletos →</a>
+                    <div class="hero-benefits">
+                        <span>✓ Entradas digitales con código QR</span>
+                        <span>✓ Pago seguro en línea o en tienda</span>
+                        <span>✓ Cambios y reenvíos desde tu cuenta</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Carrusel automático de eventos destacados -->
+            <div class="hero-image-side">
+                <div class="auto-carousel" id="hero-carousel">
+                    <div class="auto-carousel-track">
+                        <div class="auto-slide active">
+                            <img src="img/evento1.svg" alt="Póster del evento Noche de Rock Nova">
+                            <div class="slide-caption"><strong>Noche de Rock Nova</strong><span>Sáb 5 Dic · Desde $450</span></div>
+                        </div>
+                        <div class="auto-slide">
+                            <img src="img/evento4.svg" alt="Póster del Festival Luz y Color">
+                            <div class="slide-caption"><strong>Festival Luz y Color</strong><span>Sáb 9 Ene · Desde $650</span></div>
+                        </div>
+                        <div class="auto-slide">
+                            <img src="img/evento6.svg" alt="Póster de Electro Nova Night">
+                            <div class="slide-caption"><strong>Electro Nova Night</strong><span>Sáb 23 Ene · Desde $520</span></div>
+                        </div>
+                    </div>
+                    <button class="auto-carousel-btn prev" type="button" aria-label="Anterior">&#10094;</button>
+                    <button class="auto-carousel-btn next" type="button" aria-label="Siguiente">&#10095;</button>
+                    <div class="auto-carousel-dots"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CATEGORÍAS -->
+    <section id="categorias" class="careers-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Elige tu Categoría</h2>
+                <p>Cuatro formas de vivir una noche inolvidable</p>
+            </div>
+
+            <div class="careers-grid">
+
+                <div class="career-card">
+                    <div class="career-img-container">
+                        <img src="img/evento1.svg" alt="Conciertos">
+                    </div>
+                    <div class="career-content">
+                        <h3>Conciertos</h3>
+                        <p>Rock, pop, electrónica y música sinfónica en los mejores foros de la ciudad.</p>
+                    </div>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-img-container">
+                        <img src="img/evento7.svg" alt="Teatro y cultura">
+                    </div>
+                    <div class="career-content">
+                        <h3>Teatro y Cultura</h3>
+                        <p>Musicales, obras clásicas y stand up para una noche diferente.</p>
+                    </div>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-img-container">
+                        <img src="img/evento3.svg" alt="Deportes">
+                    </div>
+                    <div class="career-content">
+                        <h3>Deportes</h3>
+                        <p>Fútbol, lucha libre y más: siente la emoción del estadio desde tu lugar favorito.</p>
+                    </div>
+                </div>
+
+                <div class="career-card">
+                    <div class="career-img-container">
+                        <img src="img/evento4.svg" alt="Festivales">
+                    </div>
+                    <div class="career-content">
+                        <h3>Festivales</h3>
+                        <p>Varios escenarios, comida y actividades al aire libre durante todo el día.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PRÓXIMOS EVENTOS CON RECORRIDO INTERACTIVO (JS) -->
+    <section id="eventos" class="teachers-section">
+        <div class="teachers-container">
+
+            <div class="teachers-header">
+                <div>
+                    <span class="teachers-tag">CARTELERA 2026 - 2027</span>
+                    <h2>Próximos Eventos</h2>
+                    <p>Recorre la cartelera con las flechas (o arrastra con el mouse) y presiona "Comprar" para apartar tus boletos:</p>
+                </div>
+                <div class="teachers-nav-buttons">
+                    <button id="btn-prev" class="nav-btn" type="button" aria-label="Anterior">‹</button>
+                    <button id="btn-next" class="nav-btn" type="button" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+
+            <!-- Contenedor de los boletos (controlado por JS). Los eventos y precios son datos de ejemplo. -->
+            <div class="teachers-grid" id="teachers-track">
+
+                <div class="teacher-card">
+                    <img src="img/evento1.svg" alt="Noche de Rock Nova">
+                    <div class="teacher-info">
+                        <span class="event-date">SÁB 5 DIC</span>
+                        <h3>Noche de Rock Nova</h3>
+                        <p>Cuatro bandas en vivo, luces y pantallas gigantes. Foro Nova.</p>
+                        <div class="event-buy"><span class="event-price">Desde $450</span><button type="button" class="btn-buy" data-evento="rock">Comprar</button></div>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/evento2.svg" alt="Gala Sinfónica de Invierno">
+                    <div class="teacher-info">
+                        <span class="event-date">SÁB 12 DIC</span>
+                        <h3>Gala Sinfónica de Invierno</h3>
+                        <p>Orquesta completa con repertorio clásico y de cine. Auditorio Cielo.</p>
+                        <div class="event-buy"><span class="event-price">Desde $380</span><button type="button" class="btn-buy" data-evento="sinfonica">Comprar</button></div>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/evento3.svg" alt="Clásico del Valle">
+                    <div class="teacher-info">
+                        <span class="event-date">SÁB 19 DIC</span>
+                        <h3>Clásico del Valle</h3>
+                        <p>Halcones contra Jaguares, el partido más esperado. Estadio Sol.</p>
+                        <div class="event-buy"><span class="event-price">Desde $220</span><button type="button" class="btn-buy" data-evento="clasico">Comprar</button></div>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/evento4.svg" alt="Festival Luz y Color">
+                    <div class="teacher-info">
+                        <span class="event-date">SÁB 9 ENE</span>
+                        <h3>Festival Luz y Color</h3>
+                        <p>Tres escenarios, food trucks y show de luces al atardecer. Parque Aurora.</p>
+                        <div class="event-buy"><span class="event-price">Desde $650</span><button type="button" class="btn-buy" data-evento="festival">Comprar</button></div>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/evento5.svg" alt="Risas sin Filtro">
+                    <div class="teacher-info">
+                        <span class="event-date">SÁB 16 ENE</span>
+                        <h3>Risas sin Filtro</h3>
+                        <p>Noche de stand up con cinco comediantes invitados. Teatro Nova.</p>
+                        <div class="event-buy"><span class="event-price">Desde $300</span><button type="button" class="btn-buy" data-evento="standup">Comprar</button></div>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/evento6.svg" alt="Electro Nova Night">
+                    <div class="teacher-info">
+                        <span class="event-date">SÁB 23 ENE</span>
+                        <h3>Electro Nova Night</h3>
+                        <p>DJs internacionales y producción láser hasta el amanecer. Arena Cielo.</p>
+                        <div class="event-buy"><span class="event-price">Desde $520</span><button type="button" class="btn-buy" data-evento="electro">Comprar</button></div>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/evento7.svg" alt="El Fantasma del Teatro Nova">
+                    <div class="teacher-info">
+                        <span class="event-date">SÁB 30 ENE</span>
+                        <h3>El Fantasma del Teatro</h3>
+                        <p>Musical original con orquesta en vivo y vestuario de época. Teatro Nova.</p>
+                        <div class="event-buy"><span class="event-price">Desde $480</span><button type="button" class="btn-buy" data-evento="musical">Comprar</button></div>
+                    </div>
+                </div>
+
+                <div class="teacher-card">
+                    <img src="img/evento8.svg" alt="Lucha Estelar">
+                    <div class="teacher-info">
+                        <span class="event-date">SÁB 6 FEB</span>
+                        <h3>Lucha Estelar</h3>
+                        <p>Función de lucha libre con combates por el campeonato. Arena Cielo.</p>
+                        <div class="event-buy"><span class="event-price">Desde $260</span><button type="button" class="btn-buy" data-evento="lucha">Comprar</button></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE DOS COLUMNAS CON FORMULARIO DE COMPRA -->
+    <section id="comprar" class="hero-section">
+        <div class="hero-container">
+
+            <!-- Columna Izquierda: Textos y Beneficios -->
+            <div class="hero-text-side">
+                <span class="hero-tag">¡APARTA TU LUGAR!</span>
+                <h1 class="hero-title-custom">¿Listo para el show?</h1>
+                <p class="hero-desc-custom">
+                    Llena el formulario, elige tu evento y la zona que prefieras. Te enviaremos tu pedido y las instrucciones de pago a tu correo.
+                </p>
+
+                <div class="hero-subtitle-custom">
+                    Antes de comprar, esto es lo que debes saber:
+                </div>
+                <div class="hero-benefits hero-benefits-column">
+                    <span>✓ Zonas General, Preferente y VIP</span>
+                    <span>✓ Pago con tarjeta, transferencia o en tienda</span>
+                    <span>✓ Entrada digital con QR, sin filas de impresión</span>
+                    <span>✓ Descuentos para estudiantes con credencial</span>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Tarjeta flotante con formulario -->
+            <div class="hero-form-side">
+                <div class="cbtis-hero-form-card">
+
+                    <h3 class="form-card-title">
+                        Compra tus boletos
+                    </h3>
+
+                    <form id="form-hero-informes" action="#" method="POST">
+
+                        <!-- 1. Campo de texto: Nombre -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <input type="text" id="info_nombre" name="nombre" required placeholder="Nombre" class="form-control-input">
+                        </div>
+
+                        <!-- 2. Campo de texto: Apellido -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <input type="text" id="info_apellido" name="apellido" required placeholder="Apellido" class="form-control-input">
+                        </div>
+
+                        <!-- 3. Correo electrónico -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <input type="email" id="info_email" name="email" required placeholder="Correo electrónico" class="form-control-input">
+                        </div>
+
+                        <!-- 4. Teléfono -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <input type="tel" id="info_telefono" name="telefono" required placeholder="Teléfono o WhatsApp" class="form-control-input">
+                        </div>
+
+                        <!-- 5. Select: Evento -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <select id="info_evento" name="evento" required class="form-control-select">
+                                <option value="">Elige el evento al que quieres asistir</option>
+                                <option value="rock" data-precio="450">Noche de Rock Nova - 5 Dic - $450</option>
+                                <option value="sinfonica" data-precio="380">Gala Sinfónica de Invierno - 12 Dic - $380</option>
+                                <option value="clasico" data-precio="220">Clásico del Valle - 19 Dic - $220</option>
+                                <option value="festival" data-precio="650">Festival Luz y Color - 9 Ene - $650</option>
+                                <option value="standup" data-precio="300">Risas sin Filtro - 16 Ene - $300</option>
+                                <option value="electro" data-precio="520">Electro Nova Night - 23 Ene - $520</option>
+                                <option value="musical" data-precio="480">El Fantasma del Teatro - 30 Ene - $480</option>
+                                <option value="lucha" data-precio="260">Lucha Estelar - 6 Feb - $260</option>
+                            </select>
+                        </div>
+
+                        <!-- 6. Select: Zona -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <select id="info_zona" name="zona" required class="form-control-select">
+                                <option value="">Elige tu zona</option>
+                                <option value="1">General (precio base)</option>
+                                <option value="1.5">Preferente (x1.5)</option>
+                                <option value="2.2">VIP (x2.2)</option>
+                            </select>
+                        </div>
+
+                        <!-- 7. Número: Cantidad de boletos -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <label for="info_cantidad" class="form-date-label">Cantidad de boletos (máx. 8):</label>
+                            <input type="number" id="info_cantidad" name="cantidad" min="1" max="8" value="2" required class="form-control-input">
+                        </div>
+
+                        <!-- 8. Fecha: Fecha en que realizarás el pago -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <label for="info_fecha" class="form-date-label">Fecha en que realizarás tu pago:</label>
+                            <input type="date" id="info_fecha" name="fecha" required class="form-control-date">
+                        </div>
+
+                        <!-- 9. Textarea: Comentarios -->
+                        <div class="cbtis-input-group form-group-margin">
+                            <textarea id="info_comentarios" name="comentarios" rows="2" placeholder="¿Algún comentario? (ej. asientos juntos, accesibilidad)" class="form-control-textarea"></textarea>
+                        </div>
+
+                        <!-- Total estimado (se calcula con JavaScript) -->
+                        <div class="total-box">
+                            Total estimado: <strong id="total-estimado">$0.00 MXN</strong>
+                        </div>
+
+                        <!-- 10. Checkbox: Términos -->
+                        <div class="cbtis-input-group form-group-checkbox">
+                            <input type="checkbox" id="info_terminos" name="terminos" required class="form-checkbox-input">
+                            <label for="info_terminos" class="form-checkbox-label">
+                                Acepto los términos de compra y el aviso de privacidad de TicketNova.
+                            </label>
+                        </div>
+
+                        <!-- 11. Botón de envío -->
+                        <button type="submit" class="cbtis-btn-ingresar form-submit-btn">
+                            Apartar mis boletos
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE UBICACIÓN: MAPA INCRUSTADO (idea del proyecto "incrustado") -->
+    <section class="map-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Módulo de Atención</h2>
+                <p>Compra en persona o recoge tus dudas con nuestro equipo (ubicación de ejemplo)</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=Cuernavaca,+Morelos&amp;z=13&amp;output=embed"
+                        width="100%"
+                        height="350"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa de ubicación del módulo de atención de TicketNova">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE FORMAS DE PAGO Y RECINTOS (DOBLE LÍNEA) -->
+    <section class="convenios-section">
+        <div class="convenios-container">
+
+            <div class="section-header">
+                <span class="teachers-tag convenience-tag-custom">PAGA COMO PREFIERAS</span>
+                <h2>Formas de Pago y Recintos</h2>
+                <p>Aceptamos varias formas de pago y vendemos entradas para los mejores recintos de la región.</p>
+            </div>
+
+            <!-- LÍNEA 1: se desplaza hacia la IZQUIERDA -->
+            <div class="marquee-wrapper">
+                <div class="marquee-track marquee-track-top">
+                    <div class="convenio-card">💳 Tarjeta de crédito</div>
+                    <div class="convenio-card">💳 Tarjeta de débito</div>
+                    <div class="convenio-card">📱 Transferencia SPEI</div>
+                    <div class="convenio-card">🏪 Pago en tienda</div>
+                    <div class="convenio-card">🎁 Tarjeta de regalo</div>
+                    <div class="convenio-card">💬 Pedido por WhatsApp</div>
+                    <!-- Duplicado para efecto infinito fluido -->
+                    <div class="convenio-card">💳 Tarjeta de crédito</div>
+                    <div class="convenio-card">💳 Tarjeta de débito</div>
+                    <div class="convenio-card">📱 Transferencia SPEI</div>
+                    <div class="convenio-card">🏪 Pago en tienda</div>
+                    <div class="convenio-card">🎁 Tarjeta de regalo</div>
+                    <div class="convenio-card">💬 Pedido por WhatsApp</div>
+                </div>
+            </div>
+
+            <!-- LÍNEA 2: se desplaza hacia la DERECHA -->
+            <div class="marquee-wrapper marquee-wrapper-spacing">
+                <div class="marquee-track marquee-track-bottom">
+                    <div class="convenio-card">🎤 Foro Nova</div>
+                    <div class="convenio-card">🎻 Auditorio Cielo</div>
+                    <div class="convenio-card">⚽ Estadio Sol</div>
+                    <div class="convenio-card">🎭 Teatro Nova</div>
+                    <div class="convenio-card">🌳 Parque Aurora</div>
+                    <div class="convenio-card">🏟️ Arena Cielo</div>
+                    <!-- Duplicado para efecto infinito fluido -->
+                    <div class="convenio-card">🎤 Foro Nova</div>
+                    <div class="convenio-card">🎻 Auditorio Cielo</div>
+                    <div class="convenio-card">⚽ Estadio Sol</div>
+                    <div class="convenio-card">🎭 Teatro Nova</div>
+                    <div class="convenio-card">🌳 Parque Aurora</div>
+                    <div class="convenio-card">🏟️ Arena Cielo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA (FOOTER CON REDES SOCIALES Y FECHA DINÁMICA) -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-info">
+                <p>TicketNova &copy; 2026 · Proyecto escolar ficticio, no vende boletos reales</p>
+                <p class="footer-author">Desarrollado por: Gaona Castro Eduardo Baltazar (3B PRO VESP) · CBTis 166 Pablo Torres Burgos</p>
+                <p class="footer-date">Hoy es <time id="fecha-dinamica"></time></p>
+            </div>
+
+            <!-- Enlaces de Redes Sociales -->
+            <div class="footer-socials">
+                <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon" title="Facebook">f</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" title="Instagram">ig</a>
+                <a href="https://whatsapp.com" target="_blank" rel="noopener" class="social-icon" title="WhatsApp">💬</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon" title="YouTube">▶</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
